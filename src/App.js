@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MainImage from "./components/mainImage"
+import Images from "./components/Images"
+import styled from "styled-components"
+import Container from "@material-ui/core/Container"
+import FirebaseProvider from "./firebase/context"
+
+const Main = styled.main`
+margin: 5rem auto
+`
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FirebaseProvider>
+      <Main>
+        <Container>
+          <MainImage />
+          <Images />
+        </Container>
+      </Main>
+    </FirebaseProvider>
   );
 }
 
