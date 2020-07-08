@@ -15,14 +15,18 @@ const Upload = styled.div`
 
 const Image = styled.img`
     margin: 2rem auto;
-    width: 300px;
-    height: 400px;
+    width: 200px;
+    height: 300px;
     object-fit: cover;
     max-width: 100%;
     transform: rotate(${props => props.transform || 0}deg);
     -webkit-box-shadow: 0px 0px 27px 3px rgba(140,136,140,1);
     -moz-box-shadow: 0px 0px 27px 3px rgba(140,136,140,1);
     box-shadow: 0px 0px 27px 3px rgba(140,136,140,1);
+    @media (min-width: 700px){
+    width: 300px;
+    height: 400px;
+    }
 `
 
 const Button = styled.button`
@@ -158,7 +162,7 @@ const MainImage = () => {
                 <Button onClick={() => rotate('left')}>Izquierda</Button>
                 <svg onClick={() => removeImage()} width="10em" height="2em" viewBox="0 0 16 16" className="bi bi-trash" fill="tomato" xmlns="http://www.w3.org/2000/svg" style={{ cursor: "pointer" }}>
                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                    <path fillRule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                 </svg>
                 <Button onClick={() => rotate('right')}>Derecha</Button>
             </div>
