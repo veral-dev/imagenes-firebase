@@ -78,11 +78,10 @@ const MainImage = () => {
             .then(url => {
                 const newImage = { url, transform: 0, createdAt: new Date() }
                 firebase.db.collection('imagenesKustovi').add(newImage)
-                    .then(data => console.log('ID', data.id))
-                setMainImage(newImage)
-            })
+                    .then(data => { setMainImage({ ...newImage, id: data.id }) })
+            }
+            )
     }
-
 
     const rotate = (rotate) => {
         if (mainImage) {
