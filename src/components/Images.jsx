@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { FirebaseContext } from "../firebase/context"
 import styled from 'styled-components'
+import Spinner from './ui/spinner'
 
 const Image = styled.img`
     margin: 2rem auto;
@@ -28,11 +29,11 @@ const Images = () => {
     return (
         <div className="my-5 row">
 
-            {images && images.map((elm, index) => (
+            {images ? images.map((elm, index) => (
                 <div key={index} className="col-6 col-md-4 col-lg-2 d-flex justify-content-center">
                     <Image onClick={() => setMainImage(elm)} src={elm.url} transform={elm.transform} alt={index} />
                 </div>
-            ))}
+            )) : (<Spinner />)}
 
         </div>
 

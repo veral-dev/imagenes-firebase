@@ -3,7 +3,6 @@ import './App.css';
 import MainImage from "./components/mainImage"
 import Images from "./components/Images"
 import styled from "styled-components"
-import Container from "@material-ui/core/Container"
 import FirebaseProvider from "./firebase/context"
 
 const Main = styled.main`
@@ -20,10 +19,10 @@ function App() {
     <FirebaseProvider>
       <Main>
         <Title>Rotación de imágenes</Title>
-        <Container>
+        <div className="container">
           <MainImage />
           <Images />
-        </Container>
+        </div>
       </Main>
     </FirebaseProvider>
   );
