@@ -7,17 +7,19 @@ import Container from "@material-ui/core/Container"
 import FirebaseProvider from "./firebase/context"
 
 const Main = styled.main`
-margin: 5rem auto
+margin: 2rem auto
 `
-
-
-
+const Title = styled.h1`
+text-transform: uppercase;
+text-align: center;
+`
 
 
 function App() {
   return (
     <FirebaseProvider>
       <Main>
+        <Title>Rotación de imágenes</Title>
         <Container>
           <MainImage />
           <Images />
